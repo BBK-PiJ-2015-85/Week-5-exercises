@@ -1,0 +1,26 @@
+//using a loop
+int fib = 12;
+for (int i = 1; i <= fib; i++){
+	int ans;
+	int total;
+	if (i == 1 || i == 2){
+		ans = 1;
+	} else {
+		i = i-1 + i-2;
+	}
+	ans = i-1 + i-2;
+	println (ans);
+	
+}
+
+
+
+//println(fibonacci(12));
+//using a method
+int fibonacci(int n){
+	if (n == 1 || n == 2){
+		return 1;
+	}
+	int result = fibonacci(n-1) + fibonacci(n-2);
+	return result;
+}
