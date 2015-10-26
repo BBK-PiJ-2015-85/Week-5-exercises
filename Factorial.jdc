@@ -1,0 +1,20 @@
+//using a loop
+int fact = 7;
+for (int i = fact-1; i > 0; i--){
+	fact = fact * i;
+}
+
+println(fact);
+
+println(factorial(7));
+
+//using a recursive method
+int factorial(int n){
+	if (n == 1){
+		return 1;
+	}
+	int result = n * factorial(n - 1);
+	return result;
+}
+
+
