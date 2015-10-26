@@ -1,0 +1,13 @@
+println(han(2));
+println(han(3));
+println(han(4));
+println(han(5));
+println(han(12));
+
+int han(int numDisks){
+	if (numDisks == 2){
+		return 3;
+	}
+	int result = han(numDisks-1) * 2 + 1;
+	return result;
+}
