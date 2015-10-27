@@ -1,0 +1,15 @@
+println ("Please enter a word and I'll tell you if it's a palindrome: ");
+String str = readLine();
+println(pal(str));
+
+boolean pal(String str){
+	char char1 = str.charAt(0);
+	char char2 = str.charAt(str.length() - 1);
+	if (str.length() > 3 && char1 == char2){		
+		pal(str.substring(1, str.length() - 2));		
+	} 
+	if (char1 == char2) {
+		return true;		
+	} 
+	return false;
+}
