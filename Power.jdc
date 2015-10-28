@@ -1,0 +1,43 @@
+println(pow(2, 4));
+println(pow(2, 5));
+println(pow(2, 6));
+println(pow(2, 7));
+println(pow(2, 8));
+println(pow(2, 1));
+println(pow(2, 0));
+
+println();
+println(pow2(2, 4));
+println(pow2(2, 5));
+println(pow2(2, 6));
+println(pow2(2, 7));
+println(pow2(2, 8));
+println(pow2(2, 1));
+println(pow2(2, 0));
+
+//done using recursion
+int pow(int base, int exp){
+	if (exp == 0){
+		return 1;
+	}
+	if (exp == 1){
+		return base;
+	}
+	return pow(base*2, exp-1);
+}
+
+
+//done using a loop
+int pow2(int base, int exp){
+	int total = base;
+	if (exp == 0){
+		return 1;
+	}
+	if (exp == 1){
+	return base;
+	}
+	for (int i = exp; i > 1; i--){
+		total = total * base;
+	}
+	return total;
+}
