@@ -1,0 +1,12 @@
+println(gcd(15, 12));
+println(gcd(12, 6));
+println(gcd(27, 14));
+println(gcd(45, 15));
+println(gcd(25, 20));
+
+int gcd(int largest, int smallest){	
+	if (largest % smallest == 0){
+		return smallest;
+	}
+	return gcd(smallest, largest % smallest);	
+}
