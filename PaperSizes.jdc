@@ -1,0 +1,50 @@
+//get paper size from user and check for valid input.
+boolean valid = false;
+String str = "";
+while (!valid){
+	println("Please enter the size of your paper: ");
+	str = readLine();
+	if (str.charAt(0) != 'A'){
+		println("Invalid paper size entered.");
+	} else {
+		valid = true;		
+	}
+}
+
+//determine how many times bigger or smaller than A0 it is (A0 being size 1).
+int size = Integer.parseInt(str.substring(1));
+if (str.charAt(1) == '0'){
+	size = str.length() - 1;
+} else {
+	size = 1 - size;
+}
+
+int sideX = 841;
+int sideY = 1189;
+
+//decide which method to use
+if (size > 1){
+	bigger(size, sideX, sideY);
+} else {
+	smaller(size, sideX, sideY);
+}
+
+
+// method for paper sizes bigger than standard(A0)
+void bigger(int size, int sideX, int sideY){
+	if (size == 1){
+		println("The size of the paper is " + sideX + "mm " + "by " + sideY +"mm.");
+	} else {
+		bigger(size - 1, sideY, sideX * 2);
+	}
+}
+
+//method for paper sizes smaller than standard
+
+void smaller(int size, int sideX, int sideY){
+	if (size == 1){
+		println("The size of the paper is " + sideX + "mm " + "by " + sideY +"mm.");
+	} else {
+		smaller(size + 1, sideY / 2, sideX);
+	}
+}
